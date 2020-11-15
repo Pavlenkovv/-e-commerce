@@ -6,22 +6,18 @@ class Order:
     """Create a order"""
     def __init__(self, customer, product):
         self.customer = customer
-        self.product = product
-        self.basket = 0  # кошик порожній
+        self.products = []
+        self.products.append(product)
+        self.total_cost = 0
 
-    def buy(self):
-        pass
+    def update_order(self, product):
+        """Add products in order"""
+        self.products.append(product)
 
-    def create_order(self):
-        pass
-
-    def read_basket(self):
-        """How many items in the basket"""
-        print(f"У кошику {self.basket} товарів")
-
-    def update_basket(self, number_of_products):
-        """Add products in basket"""
-        self.basket = number_of_products
+    def total_cost(self, products):
+        """calculation of the total cost"""
+        for i in self.products:
+            self.total_cost += self.products[i]
 
     def __str__(self):
-        pass
+        return f'{self.customer} {self.products}, Total cost: {self.total_cost}'

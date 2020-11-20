@@ -4,10 +4,14 @@ import product
 
 
 if __name__ == '__main__':
-    print('Hello, I am main')
+    print('Hello, I am chatbot.')
 
-pr1 = product.Product("Apple")
-pr2 = product.Product("Cherry")
+try:
+    pr1 = product.Product("Apple")
+    pr2 = product.Product("Cherry")
+except (TypeError, ValueError) as err:
+    print(err)
+
 print(pr1)
 print(pr2)
 print('*'*80)
@@ -19,11 +23,8 @@ print('*'*80)
 first_order = order.Order(client1)
 order_1 = order.Order(client1)
 
-try:
-    order_1.add_product(pr1)
-    order_1.add_product(pr2)
-except (TypeError, ValueError) as err:
-    print(err)
+order_1.add_product(pr1)
+order_1.add_product(pr2)
 
 print('ORDER\n', order_1)
 

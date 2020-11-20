@@ -48,19 +48,29 @@ class Group:
         return f"{nl.join(map(str, self.group))}"
 
 
+class GroupNotMoreThan10(Exception):
+    """The group cannot be more than 10 people"""
+    def __init__(self, message):
+        super().__init__()
+        self.message = message
+
+    def get_exception_message(self):
+        return self.message
+
+
 stud1 = Student('Ivanenko', 'Ivan', 20, 95)
 stud2 = Student('Prokopenko', 'Milana', 19, 90)
 stud3 = Student('Proko', 'Mila', 21, 85)
 stud4 = Student('Prokopen', 'Misha', 19, 80)
 stud5 = Student('Furza', 'Milana', 18, 75)
-gr1 = Group()
-gr1.add_to_group(stud1)
-gr1.add_to_group(stud2)
-gr1.add_to_group(stud3)
-gr1.add_to_group(stud4)
-gr1.add_to_group(stud5)
-print(gr1)
+group_1 = Group()
+group_1.add_to_group(stud1)
+group_1.add_to_group(stud2)
+group_1.add_to_group(stud3)
+group_1.add_to_group(stud4)
+group_1.add_to_group(stud5)
+print(group_1)
 print('*' * 80)
-gr1.remove_from_group(stud2)
-print(gr1)
-print('Id student is: ', gr1.search(stud4))
+group_1.remove_from_group(stud2)
+print(group_1)
+print('Id student is: ', group_1.search(stud4))

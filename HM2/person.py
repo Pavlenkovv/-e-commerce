@@ -27,27 +27,25 @@ class Student(Person):
 class Group:
     """Group of students"""
     def __init__(self):
-        self.group_members = []
+        self.group = []
 
     def add_to_group(self, student):
-        if student not in self.group_members:
-            self.group_members.append(student)
+        if student not in self.group:
+            self.group.append(student)
 
     def remove_from_group(self, student):
-        if student in self.group_members:
-            self.group_members.remove(student)
+        if student in self.group:
+            self.group.remove(student)
 
     def search(self, student):
         """search"""
-        for item in self.group_members:
+        for item in self.group:
             if student is item:
-                return student.id
-            elif student not in self.group_members:
-                return -1
+                return student.id if student in self.group else -1
 
     def __str__(self):
         nl = '\n'
-        return f"{nl.join(map(str, self.group_members))}"
+        return f"{nl.join(map(str, self.group))}"
 
 
 stud1 = Student('Ivanenko', 'Ivan', 20, 95)

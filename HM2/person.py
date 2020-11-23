@@ -30,8 +30,14 @@ class Group:
         self.group = []
 
     def add_to_group(self, student):
-        if student not in self.group:
-            self.group.append(student)
+        try:
+            if len(self.group) < 10:
+                if student not in self.group:
+                    self.group.append(student)
+            else:
+                raise GroupNotMoreThan10('Group must be not more than 10 members')
+        except:
+            raise GroupNotMoreThan10('Group must be not more than 10 members')
 
     def remove_from_group(self, student):
         if student in self.group:
@@ -63,12 +69,24 @@ stud2 = Student('Prokopenko', 'Milana', 19, 90)
 stud3 = Student('Proko', 'Mila', 21, 85)
 stud4 = Student('Prokopen', 'Misha', 19, 80)
 stud5 = Student('Furza', 'Milana', 18, 75)
+stud6 = Student('Furza2', 'Milana', 18, 75)
+stud7 = Student('Furza3', 'Milana', 18, 75)
+stud8 = Student('Furza4', 'Milana', 18, 75)
+stud9 = Student('Furza5', 'Milana', 18, 75)
+stud10 = Student('Furza6', 'Milana', 18, 75)
+stud11 = Student('Furza7', 'Milana', 18, 75)
 group_1 = Group()
 group_1.add_to_group(stud1)
 group_1.add_to_group(stud2)
 group_1.add_to_group(stud3)
 group_1.add_to_group(stud4)
 group_1.add_to_group(stud5)
+group_1.add_to_group(stud6)
+group_1.add_to_group(stud7)
+group_1.add_to_group(stud8)
+group_1.add_to_group(stud9)
+group_1.add_to_group(stud10)
+group_1.add_to_group(stud11)
 print(group_1)
 print('*' * 80)
 group_1.remove_from_group(stud2)

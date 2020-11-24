@@ -36,7 +36,7 @@ class Group:
                     self.group.append(student)
             else:
                 raise GroupNotMoreThan10('Group must be not more than 10 members')
-        except:
+        except GroupNotMoreThan10:
             raise GroupNotMoreThan10('Group must be not more than 10 members')
 
     def remove_from_group(self, student):

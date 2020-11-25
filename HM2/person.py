@@ -1,3 +1,5 @@
+import math
+import random
 class Person:
     """Any Person"""
     def __init__(self, surname=None, name=None, age=None, *args, **kwargs):

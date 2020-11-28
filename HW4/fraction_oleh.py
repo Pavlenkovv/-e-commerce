@@ -26,13 +26,13 @@ class Rational:
         self.__a, self.__b = self.__a // tmp, self.__b // tmp
 
         if abs(self.__a) > abs(self.__b):
-            part1 = self.a // self.b
-            part2 = self.a % self.b
-            return f'{part1}({part2} / {self.b})'
-        elif abs(self.a) == abs(self.b):
+            part1 = self.__a // self.__b
+            part2 = self.__a % self.__b
+            return f'{part1}({part2} / {self.__b})'
+        elif abs(self.__a) == abs(self.__b):
             return f'1'
         else:
-            return f'{self.a} / {self.b}'
+            return f'{self.__a} / {self.__b}'
 
 
 x1 = Rational(1, 2)

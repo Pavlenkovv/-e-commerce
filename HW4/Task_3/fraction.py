@@ -56,11 +56,11 @@ class Fraction:
             return f'1'
         else:
             return f'{self.a}/{self.b}'
-        return f'{self.a}/{self.b}'
+        # return f'{self.a}/{self.b}'
 
 
 x1 = Fraction(1, 2)
-x2 = Fraction(2, 1)
-c = x1 / x2
+x2 = Fraction(3, 4)
+c = x1 + x2
 
 print(x1, x2, c, sep='; ')

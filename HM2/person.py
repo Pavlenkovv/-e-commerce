@@ -55,7 +55,7 @@ class Group:
 
 
 class GroupNotMoreThan10(Exception):
-    """The group cannot be more than 10 people"""
+    """The group_list cannot be more than 10 people"""
     def __init__(self, message):
         super().__init__()
         self.message = message

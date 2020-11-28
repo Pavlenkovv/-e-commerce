@@ -3,7 +3,7 @@ import student
 
 
 class GroupNotMoreThan10(Exception):
-    """The group cannot be more than 10 people"""
+    """The group_list cannot be more than 10 people"""
 
     def __init__(self, message):
         super().__init__()
@@ -36,7 +36,7 @@ if __name__ == '__main__':
     group_1.add_to_group(stud8)
     group_1.add_to_group(stud9)
     group_1.add_to_group(stud10)
-    # group_1.add_to_group(stud11)
+    # group.add_to_group(stud11)
     print(group_1)
     print('*' * 80)
     group_1.remove_from_group(stud2)

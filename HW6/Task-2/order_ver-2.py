@@ -26,7 +26,7 @@ class Product:
             raise error("The price of the goods must be positive number")
 
     def __str__(self):
-        return f'Title: {self.title}, Price: {self.price} грн.'
+        return f'Title: {self.title}, Price: {self.price} грн'
 
 
 class Order:
@@ -51,7 +51,7 @@ class Order:
         self.basket.append(product)
 
     def __str__(self):
-        result = f"User: {self.customer}\n"
+        result = str(self.customer) + '\n'
 
         for prod_in_basket in self.basket:
             result += str(prod_in_basket) + "\n"

@@ -25,5 +25,6 @@ class Order:
     def __str__(self):
         res = str(self.customer) + '\n'
         for item in self.basket:
-            res += f'{item} \n\t {self.basket[item]} x {item.price} грн. = {item.price * self.basket[item]} грн.\n'
+            res += f'{item} \n\t {self.basket[item]} x {item.price} грн ='\
+                   f'{item.price * self.basket[item]} грн\n'
         return res
